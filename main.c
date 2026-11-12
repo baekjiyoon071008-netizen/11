@@ -1,24 +1,24 @@
-#include <stdio.h> 
+#include <stdio.h>
 
-int main(void) 
-{ 
-    int i; 
-    int grade[5]; 
-    int sum = 0;
-    
-    for (i=0;i<5;i++) 
-    { 
-        printf("grade[%i] = ", i); 
-        scanf("%d", &grade[i]);
-    }
+int main(void)
+{
+    char c[2];
+    int i[2];
+    double d[2];
 
-     for (i = 0; i < 5; i++)
-    {
-        printf("grade[%i] = %i\n", i, *(grade + i));
-        sum = sum + *(grade + i);
-    }
+    char *pc = c;
+    int *pi = i;
+    double *pd = d;
 
-    printf("average : %i\n", sum / 5);
+    printf("증가 전 : pc = %p, pi = %p, pd = %p\n",
+           (void *)pc, (void *)pi, (void *)pd);
+
+    pc++;
+    pi++;
+    pd++;
+
+    printf("증가 후 : pc = %p, pi = %p, pd = %p\n",
+           (void *)pc, (void *)pi, (void *)pd);
 
     return 0;
 }
